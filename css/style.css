@@ -1,0 +1,581 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+}
+html{
+    font-size: 62.5%;
+}
+ul li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    font-size: 1.6rem;
+}
+/* #######################  NAVBAR STYLING ################### */
+
+#navbar input[type="checkbox"],
+#navbar #lines{
+    display: none;
+}
+#navbar{
+    box-shadow: 0px 5px 10px 0px #aaa;
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    color: #000;
+    opacity: .85;
+    z-index: 20;
+}
+#hamburger{
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    align-items: center;
+}
+#menu{
+    order: 2;
+    display: flex;
+}
+#menu > div{
+    margin-left: 1.5rem;
+    font-size: 1.8rem;
+}
+#menu > div a{
+    color: #444;
+    font-weight: 500;
+}
+#logo{
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+#menu > div a:hover{
+    color: #117964;
+}
+/* ##################### HEADER STYLING #################### */
+
+#header{
+    height: 50vh;
+    background: linear-gradient(rgba(240,240,240,.144), rgba(255,255,0,.1)) ,url(../img/header-image2.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+#container2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.6rem;
+}
+#container2 > div a{
+    display: inline-block;
+    color: #fff;
+    background-color: #16a083;
+    text-transform: uppercase;
+    border-radius: 50px;
+    padding: 1rem 3rem;
+    cursor: pointer;
+    outline: none;
+    font-weight: 500;
+}
+#container2 > div{
+    text-align: center;
+    margin-top: 2rem;
+}
+.head{
+    text-align: center;
+    text-transform: uppercase;
+}
+.para{
+    text-align: center;
+}
+/* ###################### SHOWCASE STYLING ##################### */
+
+#showcase{
+    background-color: #f5f5f7;
+    padding: 5rem 0;
+}
+#row1{
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+#text h3{
+    font-size: 1.6rem;
+    color: #666;
+}
+#text h2{
+    font-size: 3.2rem;
+}
+#text p{
+    font-size: 1.6rem;
+    color: #555;
+}
+#image{
+    flex: 1 1 400px;
+    padding: 30px;
+    transform: translateX(150%);
+    animation: image-animation 1s ease-in-out forwards;
+}
+@keyframes image-animation{
+    100%{
+        transform: translate(0)
+    }
+}
+#text{
+    flex: 1 1 400px;
+    padding: 30px;
+    margin: auto;
+    transform: translateX(-150%);
+    animation: text-animation 1s ease-in-out forwards;
+}
+@keyframes text-animation{
+    100%{
+        transform: translate(0)
+    }
+}
+#image img{
+    display: block;
+    height: 400px;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: right;
+}
+/* ######################### FOOD SECTION ########################## */
+
+#food-section{
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+#food-section > h2{
+    margin: 5rem 0 4rem 0;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 400;
+    color: #555;
+}
+#image1 img, #image2 img, #image3 img{
+    display: block;
+    max-width: 1200px;
+}
+#image1, #image2, #image3{
+    position: relative;
+}
+#image1 .boxes, #image2 .boxes, #image3 .boxes{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    opacity: 0;
+    color: #fff;
+    transition: 0.3s all ease-in-out .1s;
+}
+#image1:hover .boxes, #image2:hover .boxes, #image3:hover .boxes{
+    opacity: 1;
+    top: 50%;
+}
+#image1:hover::after, #image2:hover::after, #image3:hover::after{
+    opacity: 1;
+    transform: scaleY(1);
+}
+#image1::after, #image2::after, #image3::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.872);
+    opacity: 0;
+
+    transform: scaleY(0);
+    transform-origin: 100% 100%;
+    transition: all .3s ease-in-out;
+}
+
+#image1 > .boxes a, #image2 > .boxes a, #image3 > .boxes a{
+    display: inline-block;
+    color: #fff;
+    font-size: 1.2rem;
+    background-color: #16a083;
+    text-transform: uppercase;
+    border-radius: 50px;
+    padding: 1rem 3rem;
+    cursor: pointer;
+    outline: none;
+    font-weight: 500;
+}
+.boxes h2{
+    text-align: center;
+    font-size: 3rem;
+}
+#food-images{
+    display: flex;
+    justify-content: space-between;
+}
+#food-images img{
+    display: block;
+    width: 100%; 
+    margin: auto;
+    object-fit: cover;
+    object-position: center;  
+}
+#image1, #image2, #image3{
+    margin: 0 1rem;
+}
+/* ###################### FOOD MENU STYLING ################## */
+
+#menu-items{
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+#food-menu > h2{
+    font-size: 4rem;
+    text-align: center;
+    color: #555;
+    font-weight: 400;
+    margin-top: 10rem;
+}
+#menu-items{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 0 30px 0;
+}
+.containers img{
+    display: block;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+.containers{
+    display: flex;
+    flex: 1 1 600px;
+    justify-content: space-evenly;
+    margin-bottom: 3rem;
+}
+.containers > div:nth-child(2){
+    margin: auto 1.5rem;
+}
+.containers > div:nth-child(2) h2{
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: #444;
+}
+.containers > div:nth-child(2) p{
+    font-size: 1.4rem;
+    color: #555;
+    font-weight: 500;
+}
+.containers > div:nth-child(2) .paragraph{
+    color: #117964;
+    font-weight: 700;
+}
+/* ######################## TESTIMONIAL SECTION ############################ */
+#testimony{
+    background-color: rgb(245, 244, 244);
+    padding: 5rem 0;
+}
+#testimony > h2{
+    font-size: 3rem;
+    color: #444;
+    text-align: center;
+    font-weight: 400;
+}
+#review-section > div{
+    padding: 1rem;
+}
+#review-section{
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+#review-section img{
+    display: block;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    margin: 1rem auto;
+}
+.icons{
+    color: #ff9529;
+    text-align: center;
+    margin: 2rem;
+}
+.p1{
+    font-size: 1.6rem;
+    color: #555;
+    text-align: center;
+}
+
+/* ###################### CONTACT STYLING ################## */
+#contact{
+    background-color: rgb(226, 226, 226);
+    padding: 5em 0;
+}
+#big-row{
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    background-color: #fff;
+}
+#big-row img{
+    width: 600px
+}
+#big-row img{
+    display: block;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    /* width: 100%; */
+}
+#form-box{
+    padding: 1rem;
+    width: 600px;
+    margin: auto;
+}
+input[type = "text"]{
+    display: block;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    width: 100%;
+    padding: 1rem 0;
+    margin-bottom: 1rem 0;
+    outline: none;
+    color: #444;
+    font-weight: 500;
+    box-shadow: none;
+}
+textarea{
+    display: block;
+    border: none; 
+    width: 100%;
+    border-bottom: 2px solid #ddd;
+    padding: 1rem 0;
+}
+#form-box h2{
+    font-size: 3rem;
+    color: #444;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+input[type = "submit"]{
+    display: block;
+    margin: auto;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #117964;
+    padding: 1rem 2rem;
+    border: 1px solid #117964;
+    border-radius: 30px;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+/* ####################### FOOTER STYLING ################## */
+#footer{
+    background-color: rgb(65,65,65);
+    text-align: center;
+}
+#footer p{
+    font-size: 1.6rem;
+    color: #fff;
+}
+#footer >div{
+    padding: 1rem;
+}
+.icon{
+    color: #fff;
+    padding: 0 1rem;
+}
+/* ################# THANK YOU STYLING ############ */
+#thanku{
+    width: 60%;
+    margin: auto;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+#thanku > div:first-child{
+    color: #e63946;
+    margin: 10% auto;
+}
+#thanku > div:last-child{
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+/* ####################### MEDIA QUERIES #################### */
+/* ###################### 3 LINE MENU ####################### */
+@media all and (max-width: 768px){
+    #navbar{
+        opacity: .95;
+    }
+    #navbar input[type="checkbox"],
+    #navbar #lines{
+    display: block;
+    }
+    #hamburger{
+        display: block;
+        position: relative;
+        height: 64px;
+    }
+    #hamburger input[type = "checkbox"]{ 
+        display: block;
+        position: absolute;
+        height: 32px;
+        width: 40px;
+        top: 20px;
+        left: 20px;
+        z-index: 5;
+        opacity: 0;
+    }
+    #hamburger #lines{
+        display: block;
+        position: absolute;
+        height: 32px;
+        width: 40px;
+        top: 20px;
+        left: 20px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    #hamburger #lines .line1, .line2, .line3{
+        display: block;
+        height: 4px;
+        width: 100%;
+        border-radius: 10px;
+        background-color: #333;
+    }
+    #hamburger #lines .line1{
+        transform-origin: 0% 0%;;
+        transition: transform 0.4s ease-in-out;
+    }
+    #hamburger #lines .line2{
+        transition: transform 0.4s ease-in-out;
+    }
+    #hamburger #lines .line3{
+        transform-origin: 0% 100%;;
+        transition: transform 0.4s ease-in-out;
+    }
+    #navbar #menu{
+        padding-top: 100px;
+        background-color: #fff;
+        height: 100vh;
+        max-width: 300px;
+        transform: translateX(-150%);
+        display: flex;
+        flex-direction: column;
+        margin-left: -40px;
+        padding-left: 50px;
+        transition: transform 0.5s ease-in-out;
+        box-shadow: 5px 0px 10px 0px #aaa;
+    }
+    #navbar #menu div{
+        margin-top: 3rem;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+    #logo{
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 3rem;
+    }
+    #hamburger input[type = "checkbox"]:checked ~ #menu{
+        transform: translateX(0);   
+    }
+    #hamburger input[type = "checkbox"]:checked ~ #lines .line1{
+        transform: rotate(45deg);
+    }
+    #hamburger input[type = "checkbox"]:checked ~ #lines .line2{
+        transform: scaleY(0);
+    }
+    #hamburger input[type = "checkbox"]:checked ~ #lines .line3{
+        transform: rotate(-45deg);
+    }
+
+
+    #food-images{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    #food-images > div{
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        margin-bottom: 3rem;
+    }
+    #review-section{
+        flex-direction: column;
+        text-align: center;
+    }
+    #form-box{
+        width: 90%;
+    }
+    #big-row{
+        display: flex;
+        flex-direction: column;
+    }
+    #image-box img{
+        width: 90%;
+        margin: 3rem auto;
+    }
+}
+/* ######################## SMALL SCREEN ################################### */
+
+@media all and (max-width: 500px){
+    html{
+        font-size: 50%;
+    }
+    #review-section{
+        flex-direction: column;
+        text-align: center;
+    }
+    .containers{
+        flex-direction: column;
+        text-align: center;
+    }
+    #menu-items img{
+        margin: auto;
+    }
+    #form-box{
+        width: 90%;
+    }
+    #big-row{
+        display: flex;
+        flex-direction: column;
+    }
+    #image-box img{
+        width: 90%;
+        margin: 3rem auto;
+    }
+}
